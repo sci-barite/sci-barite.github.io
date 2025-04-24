@@ -1,0 +1,419 @@
+{
+  "profile": {
+    "age": 38,
+    "education": [
+      {
+        "degree": "Laurea triennale in Scienze della Terra",
+        "institution": "University",
+        "year": "Year",
+        "details": "Internship in Remote Sensing, thesis on Mobile Application for Geotourism with Augmented Reality - focus on content"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "name": "TypeScript",
+      "category": "Programming",
+      "functionalCategory": "Web Development",
+      "level": 80,
+      "experiences": ["Cedacri International"]
+    },
+    {
+      "name": "SQL",
+      "category": "Programming",
+      "functionalCategory": "Database",
+      "level": 85,
+      "experiences": ["Cedacri International"]
+    },
+    {
+      "name": "Google Apps Script",
+      "category": "Scripting",
+      "functionalCategory": "Automation",
+      "level": 75,
+      "experiences": ["Cedacri International"]
+    },
+    {
+      "name": "Python",
+      "category": "Programming",
+      "functionalCategory": "Data Engineering",
+      "level": 90,
+      "experiences": ["Cedacri International"]
+    },
+    {
+      "name": "pySpark",
+      "category": "Big Data",
+      "functionalCategory": "Data Processing",
+      "level": 60,
+      "experiences": ["Cedacri International"],
+      "note": "Basics"
+    },
+    {
+      "name": "Oracle",
+      "category": "Database",
+      "functionalCategory": "Database Administration",
+      "level": 70,
+      "experiences": ["Cedacri International"],
+      "note": "Includes tools like Oracle SQL*LDR"
+    },
+    {
+      "name": "tcVISION",
+      "category": "Data Replication",
+      "functionalCategory": "Data Engineering",
+      "level": 65,
+      "experiences": ["Cedacri International"],
+      "note": "Now known as Rocket Data Replication and Sync"
+    },
+    {
+      "name": "Linux System Administration",
+      "category": "System Administration",
+      "functionalCategory": "Infrastructure",
+      "level": 80,
+      "experiences": ["Cedacri International"]
+    },
+    {
+      "name": "Apache Hive",
+      "category": "Big Data",
+      "functionalCategory": "Data Warehousing",
+      "level": 70,
+      "experiences": ["Cedacri International"]
+    },
+    {
+      "name": "Apache Hadoop",
+      "category": "Big Data",
+      "functionalCategory": "Data Processing",
+      "level": 60,
+      "experiences": ["Cedacri International"],
+      "note": "Basics"
+    },
+    {
+      "name": "C/C++",
+      "category": "Programming",
+      "functionalCategory": "Software Accomplishment",
+      "level": 50,
+      "experiences": ["Cedacri International"],
+      "note": "Basics"
+    },
+    {
+      "name": "Java/Groovy",
+      "category": "Programming",
+      "functionalCategory": "Software Development",
+      "level": 55,
+      "experiences": ["Cedacri International"],
+      "note": "Basics"
+    },
+    {
+      "name": "Kubernetes",
+      "category": "Container Orchestration",
+      "functionalCategory": "Infrastructure",
+      "level": 70,
+      "experiences": []
+    },
+    {
+      "name": "Docker",
+      "category": "Containerization",
+      "functionalCategory": "Infrastructure",
+      "level": 75,
+      "experiences": []
+    },
+    {
+      "name": "Apache Kafka",
+      "category": "Messaging",
+      "functionalCategory": "Data Streaming",
+      "level": 65,
+      "experiences": ["Cedacri International"]
+    },
+    {
+      "name": "REST APIs",
+      "category": "Web Services",
+      "functionalCategory": "API Development",
+      "level": 70,
+      "experiences": []
+    },
+    {
+      "name": "Node.js",
+      "category": "Programming",
+      "functionalCategory": "Web Development",
+      "level": 70,
+      "experiences": []
+    },
+    {
+      "name": "ETL",
+      "category": "Data Engineering",
+      "functionalCategory": "Data Integration",
+      "level": 75,
+      "experiences": ["Cedacri International"]
+    },
+    {
+      "name": "Cloud Computing",
+      "category": "Cloud",
+      "functionalCategory": "Infrastructure",
+      "level": 65,
+      "experiences": []
+    },
+    {
+      "name": "Serverless Architecture",
+      "category": "Cloud",
+      "functionalCategory": "Web Development",
+      "level": 60,
+      "experiences": []
+    },
+    {
+      "name": "Software Development",
+      "category": "General",
+      "functionalCategory": "Software Engineering",
+      "level": 80,
+      "experiences": ["Cedacri International"]
+    },
+    {
+      "name": "JavaScript",
+      "category": "Programming",
+      "functionalCategory": "Web Development",
+      "level": 75,
+      "experiences": []
+    },
+    {
+      "name": "Recruitment",
+      "category": "HR",
+      "functionalCategory": "Talent Acquisition",
+      "level": 60,
+      "experiences": []
+    }
+  ],
+  "courses": [
+    {
+      "title": "Linux System Engineer: Authentication with LDAP and Kerberos",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["Linux System Administration", "Authentication", "Kerberos"]
+    },
+    {
+      "title": "Learning Kubernetes",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["Kubernetes", "Docker", "Cloud Computing"]
+    },
+    {
+      "title": "Data Management with Apache NiFi",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["Apache NiFi", "ETL", "Data Engineering"]
+    },
+    {
+      "title": "Linux Foundation Certified System Administrator (LFCS) Cert Prep",
+      "provider": "Provider",
+      "year": "In progress",
+      "relatedSkills": ["Linux System Administration", "System Administration"]
+    },
+    {
+      "title": "Docker for Developers",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["Docker", "Containerization", "Software Development"]
+    },
+    {
+      "title": "Learn Apache Kafka for Beginners",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["Apache Kafka", "Data Streaming", "Messaging"]
+    },
+    {
+      "title": "Learning REST APIs",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["REST APIs", "Web Services", "API Development"]
+    },
+    {
+      "title": "Node.js Essential Training: Web Servers, Tests, and Deployment",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["Node.js", "JavaScript", "Web Development"]
+    },
+    {
+      "title": "ETL and ELT in PostgreSQL",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["ETL", "SQL", "PostgreSQL"]
+    },
+    {
+      "title": "Learning Node.js",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["Node.js", "JavaScript", "Web Development"]
+    },
+    {
+      "title": "Node.js: Testing and Code Quality",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["Node.js", "Software Testing", "Code Quality"]
+    },
+    {
+      "title": "Cloud Native Twelve-Factor and Fifteen-Factor Applications",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["Cloud Computing", "Software Development", "Microservices"]
+    },
+    {
+      "title": "Serverless Static Websites on AWS",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["Serverless Architecture", "AWS", "Web Development"]
+    },
+    {
+      "title": "Building Dynamic Websites using AWS Lambdas",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["Serverless Architecture", "AWS Lambda", "Web Development"]
+    },
+    {
+      "title": "Career Essentials in Software Development by Microsoft and LinkedIn",
+      "provider": "Microsoft and LinkedIn",
+      "year": "Year",
+      "relatedSkills": ["Software Development", "Programming", "Career Development"]
+    },
+    {
+      "title": "Become a Software Developer",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["Software Development", "Programming", "Problem Solving"]
+    },
+    {
+      "title": "JavaScript Essential Training",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["JavaScript", "Web Development", "Front-end Development"]
+    },
+    {
+      "title": "Tech Recruitment Certified Professional",
+      "provider": "Provider",
+      "year": "Year",
+      "relatedSkills": ["Recruitment", "Talent Acquisition", "HR"]
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Cedacri International",
+      "role": "System Administrator",
+      "duration": "01/10/2023 - Present",
+      "responsibilities": [
+        "Data Engineering",
+        "Support for tcVISION and Kafka groups (Supporto.TcVision-Cedacri and Supporto.Kafka-Cedacri)",
+        "Offloading and data replication tasks",
+        "System and application maintenance",
+        "Training junior colleagues",
+        "Documentation and internal wiki management"
+      ],
+      "projects": [
+        {
+          "title": "Kafka Infrastructure Migration (Offloading Components)",
+          "description": "Migrated all applications with Offloading components to a new Kafka infrastructure, including parallel offloading on two clusters with Kerberos configuration.",
+          "technologies": ["Kafka", "Kerberos"],
+          "status": "completed"
+        },
+        {
+          "title": "Kafka Infrastructure Migration (Non-Offloading Components)",
+          "description": "Migrated all non-offloading Kafka components to a new Kafka infrastructure.",
+          "technologies": ["Kafka"],
+          "status": "completed"
+        },
+        {
+          "title": "Automated Kafka Object Management",
+          "description": "Developed an automated system for Kafka object requests, now integrating with SR for automatic fulfillment.",
+          "technologies": ["Kafka", "Automation"],
+          "status": "completed"
+        },
+        {
+          "title": "Batch Data Loading",
+          "description": "Performed numerous batch data loads using AY_OFFLODNG.pyspark and AY_OFFLODNG.sqlldr, including CDC halts and verifications.",
+          "technologies": ["pySpark", "SQL*LDR"],
+          "status": "completed"
+        },
+        {
+          "title": "Minor Offloading Projects",
+          "description": "Various smaller offloading tasks, including CDC for DB2 tables and filter adjustments for AN_OFFLODNG.",
+          "technologies": ["DB2", "CDC"],
+          "status": "completed"
+        },
+        {
+          "title": "VSAM CDC Implementation",
+          "description": "Successfully implemented the first CDC process for VSAM as part of regulatory compliance project CD_OFFLODNG.",
+          "technologies": ["VSAM", "CDC"],
+          "status": "completed"
+        },
+        {
+          "title": "Ongoing Offloading Support",
+          "description": "Providing continuous support for offloading tasks using tcVISION, AY_OFFLODNG.pyspark, and AY_OFFLODNG.sqlldr.",
+          "technologies": ["tcVISION", "pySpark", "SQL*LDR"],
+          "status": "ongoing"
+        },
+        {
+          "title": "Kafka Operations Support",
+          "description": "Ongoing support for Kafka operations, including maintenance of tcVISION and Kafka machines in various environments.",
+          "technologies": ["Kafka", "Linux"],
+          "status": "ongoing"
+        },
+        {
+          "title": "Internal Documentation for tcVISION/Kafka Team",
+          "description": "Maintaining internal documentation for the tcVISION/Kafka team.",
+          "technologies": [],
+          "status": "ongoing"
+        },
+        {
+          "title": "Training Junior Colleagues",
+          "description": "Trained two junior colleagues: Catalin Sirghi and Arina Oprea.",
+          "technologies": [],
+          "status": "ongoing"
+        },
+        {
+          "title": "Oracle to Oracle Offloading for TE_CORPBANK",
+          "description": "Initiating offloading (CDC and batch) from Oracle to Oracle for TE_CORPBANK [ITG 693638].",
+          "technologies": ["Oracle", "CDC"],
+          "status": "ongoing"
+        },
+        {
+          "title": "VSAM Offloading for TE_CORPBANK",
+          "description": "Offloading VSAM for TE_CORPBANK [ITG 691378], focusing on 'Mappatura Causali Movimenti Online' (development completed).",
+          "technologies": ["VSAM"],
+          "status": "ongoing"
+        },
+        {
+          "title": "Migration to Cloudera Data Platform",
+          "description": "Migrating AY_OFFLODNG.pyspark to the new Cloudera Data Platform infrastructure.",
+          "technologies": ["pySpark", "Cloudera"],
+          "status": "ongoing"
+        },
+        {
+          "title": "Paused Offloading Projects",
+          "description": "Several offloading projects paused due to application or system updates (ITG 896892, Storico SP per DBX Corporate, Attivazione CDC Oracle per DBX Corporate, IT                               G 791927: CDC da Oracle DBX-Corporate a CDP [DK_ANALYTIC]).",
+          "technologies": ["Oracle", "CDC"],
+          "status": "ongoing"
+        },
+        {
+          "title": "Apache NiFi Project (CDC from Oracle to CDP)",
+          "description": "First application project using Apache NiFi for CDC from Oracle DBX-Corporate to CDP [ITG 791927], including pipeline and product documentation.",
+          "technologies": ["Apache NiFi", "Oracle", "CDC"],
+          "status": "ongoing"
+        },
+        {
+          "title": "Antifraud Project",
+          "description": "Second project using Apache NiFi for antifraud measures [ITG 780540].",
+          "technologies": ["Apache NiFi"],
+          "status": "ongoing"
+        },
+        {
+          "title": "Prometheus-Grafana Monitoring for Apache NiFi",
+          "description": "Setting up monitoring for Apache NiFi using Prometheus and Grafana, in collaboration with the MOSE group.",
+          "technologies": ["Prometheus", "Grafana", "Apache NiFi"],
+          "status": "ongoing"
+        }
+      ]
+    }
+  ],
+  "interests": [
+    "Creating Telegram or Google Chat bots integrated with AI and/or Google Workspace documents",
+    "Developing scraping systems for automation in recruiting, business development/sales, or marketing",
+    "Creating Google Chrome extensions",
+    "Automating Google Sheets with Google Apps Script written in TypeScript (various freelance jobs on UpWork)",
+    "Creating tabletop role-playing games with digital components",
+    "Technical and non-technical writing"
+  ]
+}
