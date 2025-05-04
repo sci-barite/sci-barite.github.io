@@ -1,39 +1,98 @@
+/* General styles */
 body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: sans-serif;
-}
-
-body {
-  page-break-after: always;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
 
 #cv-container {
-  width: 21cm;
-  height: 29.7cm;
-  background-color: white;
-  padding: 20px;
-  box-sizing: border-box;
+    width: 21cm;
+    min-height: 29.7cm;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
-#cv-container .experience{
-  padding: 5px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid black;
+/* Top Bar */
+#top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ddd;
+    margin-bottom: 10px;
+}
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-#cv-container .course{
-  padding: 5px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid black;
+#profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
 
+/* Sidebar */
+#sidebar {
+    width: 25%;
+    padding: 10px;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+}
+/* Main Content */
+#main-content {
+    width: 75%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+/* Experience Card */
+.experience {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Project Rectangle */
+.project, .interest {
+    margin: 10px;
+    padding: 5px;
+    background-color: lightblue;
+}
+
+.project.expanded, .interest.expanded {
+    width: 100%;
+    background-color: lightgreen;
+}
+
+.project.collapsed {
+    overflow: hidden;
+    max-height: 30px;
+}
+
+/* Multi-page */
+#cv-container.multi-page .experience {
+    page-break-after: always;
+}
+
+#cv-container.multi-page .project, #cv-container.multi-page .interest {
+    max-height: initial;
+    overflow: visible;
+}
 
 @media print and (orientation: landscape) {
-  #cv-container {
-    width: 29.7cm;
-    height: 21cm;
-  }
+    #cv-container {
+        width: 29.7cm;
+        min-height: 21cm;
+    }
 }
