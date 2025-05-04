@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+body {
+  page-break-after: always;
+}
+
+#cv-container {
+  width: 21cm;
+  height: 29.7cm;
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#cv-container .experience{
+  padding: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+#cv-container .course{
+  padding: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+
+@media print and (orientation: landscape) {
+  #cv-container {
+    width: 29.7cm;
+    height: 21cm;
+  }
+}
