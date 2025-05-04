@@ -15,7 +15,7 @@ window.addEventListener("load", function () {
     // Funzione per popolare il CV con i dati
     function renderCV(data) {
       // Header
-      document.getElementById('cv-photo').src = data.photo || "";
+      document.getElementById('cv-photo').src = data.photo || "pfp.jpeg";
       document.getElementById('cv-name').innerText = data.name;
       document.getElementById('cv-title').innerText = data.title;
       document.getElementById('cv-contact').innerHTML = `<strong>Email:</strong> ${data.contact.email} <br><strong>Phone:</strong> ${data.contact.phone}`;
