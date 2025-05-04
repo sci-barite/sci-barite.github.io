@@ -1,6 +1,14 @@
 fetch('https://cdn.jsdelivr.net/gh/sci-barite/sci-barite.github.io@main/data/CV.json')
     .then(response => response.json())
     .then(data => {
+        //display the json
+        const jsonPreview = document.getElementById('json-preview');
+        if(jsonPreview){
+            const jsonString = JSON.stringify(data, null, 2); // Pretty print JSON
+            jsonPreview.innerHTML = `<pre><code class="language-json">${jsonString}</code></pre>`;
+            Prism.highlightAll(); // Highlight the code
+        }
+        
         console.log(data);
         // Profile
         const header = document.querySelector('header');
@@ -75,7 +83,7 @@ fetch('https://cdn.jsdelivr.net/gh/sci-barite/sci-barite.github.io@main/data/CV.
                  
                 skillsContainer.appendChild(skillItem);
             });//end of skills loop
-            sidebar.appendChild(skillsList);
+            sidebar.appendChild(skillsContainer);
         }
         //Sidebar: Courses
         if (data.courses && sidebar) {

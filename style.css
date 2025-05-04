@@ -13,6 +13,7 @@ body {
     width: 21cm;
     background-color: white;
     padding: 20px;
+    gap: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -100,6 +101,21 @@ header {
 #cv-container.multi-page .project, #cv-container.multi-page .interest {
     max-height: initial;
     overflow: visible;
+}
+/* JSON Preview */
+#json-preview {
+    display: none; /* Hidden by default */
+}
+
+@media print and (orientation: portrait) {
+    #cv-container {
+        flex-direction: row;
+    }
+    #json-preview {
+        display: flex; /* Visible in portrait mode */
+        flex: 0 0 40%; /* Width of 40% */
+        margin: 10px;
+    }
 }
 
 @media print and (orientation: landscape) {
