@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Prism CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-dark.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-dark.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100 flex flex-col items-center">
+<body class="bg-gray-100 flex flex-col items-center p-4">
     <!-- Top Bar with Buttons -->
-    <div id="top-bar" class="flex justify-center space-x-4 p-4 bg-gray-200 w-full">
-        <button id="landscape-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Landscape Mode</button>
-        <button id="page-mode-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Multi-Page</button>
-        <button id="json-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Toggle JSON</button>
+    <div id="top-bar" class="w-full flex justify-center space-x-4 mb-4">
+        <button id="landscape-button" class="px-4 py-2 bg-blue-500 text-white rounded">Landscape Mode</button>
+        <button id="page-mode-button" class="px-4 py-2 bg-blue-500 text-white rounded">Multi-Page</button>
+        <button id="json-button" class="px-4 py-2 bg-blue-500 text-white rounded">Toggle JSON</button>
     </div>
 
+    <!-- A4 Container -->
+    <div id="cv-container" class="bg-white shadow-lg rounded-lg flex flex-col p-8">
+        
+        <!-- Header -->
+        <header id="header" class="mb-8 flex items-center">
+            <img src="pfp.jpeg" alt="Profile Picture" class="w-24 h-24 rounded-full mr-4">
+        </header>
 
-    <!-- Main CV Container -->
-    <div id="cv-container" class="flex flex-row bg-white shadow-lg rounded-lg overflow-hidden w-[21cm]">
-        <!-- Sidebar -->
-        <aside id="sidebar" class="w-1/4 p-4 bg-blue-200 flex flex-col">
-            <div id="profile-container" class="mb-4"></div>
-            <div id="skills-container" class="flex flex-col"></div>
-            <div id="courses-container" class="flex flex-col"></div>
-        </aside>
+        <!-- Main Area (Sidebar + Main Content) -->
+        <div id="main-area" class="flex w-full">
+            <!-- Sidebar -->
+            <aside id="sidebar" class="w-1/4 mr-4">
+                 <div id="skills-container"></div>
+                <div id="courses-container"></div>
+            </aside>
 
-        <!-- Main Content -->
-        <main id="main-content" class="w-2/4 p-4 flex flex-col">
-            <header class="flex flex-col items-center justify-center mb-4"> <img src="pfp.jpeg" id="profile-picture" class="w-32 h-32 rounded-full mb-4"> </header>
-            <div id="experiences-container" class="flex flex-col"></div>
-            <div id="interests-container" class="flex flex-col"></div>
-        </main>
-        <div id="json-preview" class="w-1/4 p-4 bg-gray-800 text-white"></div>
+            <!-- Main Content -->
+            <main id="main-content" class="w-3/4">
+                <div id="experiences-container"></div>
+                <div id="interests-container"></div>
+            </main>
+             <!-- JSON Preview -->
+            <div id="json-preview" class="w-1/4 p-4 bg-gray-800 text-white">
+            </div>
+        </div>
+        
     </div>
-    <!-- Prism Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js" defer></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

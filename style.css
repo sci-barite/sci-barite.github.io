@@ -1,139 +1,52 @@
-/* General styles */
-body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* style.css */
+
+/* A4 Container */
 #cv-container {
-    display: flex;
-    width: 21cm;
-    min-height: 29.7cm; /* A4 height */
-    background-color: white;
-    padding: 20px;
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
+    @apply w-[21cm] h-[29.7cm]
 }
 
-/* Top Bar */
-#top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #ddd;
-    margin-bottom: 10px;
-}
 /* Header */
-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+#header {
+    @apply mb-8 flex items-center;
 }
 
-#profile-picture {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+/* Main Area (Sidebar + Main Content) */
+#main-area {
+    @apply flex w-full;
 }
 
 /* Sidebar */
 #sidebar {
-    width: 200px;
-    padding: 10px;
-    background-color: lightgrey;
-    display: flex;
-    flex-direction: column;
+    @apply w-1/4 mr-4;
 }
-/* Main Content*/
+/* Profile image*/
+#header img{
+    @apply mr-4
+}
+
+/* Main Content */
 #main-content {
-    width: 75%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-}
-/* Experience Card */
-.experience {
-    border: 1px solid black;
-    margin: 10px;
-    padding: 10px;
+    @apply w-3/4;
 }
 
-/* Project Rectangle */
-.project, .interest {
-    margin: 10px;
-    padding: 5px;
-    background-color: lightblue;
+/* Buttons */
+#top-bar button {
+    @apply px-4 py-2 bg-blue-500 text-white rounded;
 }
-
-.project.expanded, .interest.expanded {
-    width: 100%;
-    background-color: lightgreen;
+/* Hide the json-preview when printing */
+@media print{
+    #json-preview{
+        display: none;
+    }
 }
-
-.project.collapsed {
-    overflow: hidden;
-    max-height: 30px;
-}
-
-/*expanded skill*/
-.skill.expanded > div{
-    display:block;
-}
-
-/*expanded course*/
-.course.expanded > div{
-    display:block;
-}
-
-/* Multi-page */
-#cv-container.multi-page .experience {
-    page-break-after: always;
-}
-#cv-container.multi-page #sidebar{
-    page-break-before: always;
-}
-
-#cv-container.multi-page .project, #cv-container.multi-page .interest {
-    max-height: initial;
-    overflow: visible;
-}
-/* JSON Preview */
-#json-preview { 
+/* json preview*/
+#json-preview {
     background-color: #2d2d2d; /* Dark background */
     color: #f8f8f2; /* Light text */
     border-left: 1px solid #444;
     overflow: auto;
-}
-
-@media print and (orientation: portrait) {
-    #cv-container {
-        flex-direction: row;
-    }
-    #json-preview {
-        display: flex;
-        flex: 0 0 40%; /* Width of 40% */
-        margin: 10px;
-    }
-}
-@media print{
-     #json-preview {
-        display: flex; /* Visible in portrait mode */
-        flex: 0 0 40%; /* Width of 40% */
-        margin: 10px;
-    }
-}
-
-@media print and (orientation: landscape) {
-    #cv-container {
-        width: 29.7cm;
-        min-height: 21cm;
-        flex-direction: row;
-    }
-
 }
