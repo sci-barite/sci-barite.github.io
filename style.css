@@ -1,22 +1,102 @@
-/* style.css */
+/* Generale */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f9;
+  color: #333;
+}
 
-/* Hide the json-preview when printing */
-@media print{
-    #json-preview{
-        display: none;
-    }
+#cv-container {
+  max-width: 210mm;
+  margin: 20mm auto;
+  padding: 10mm;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
-/* json preview*/
-#json-preview {
-    background-color: #2d2d2d; /* Dark background */
-    color: #f8f8f2; /* Light text */
-    border-left: 1px solid #444;
-    overflow: auto;
+
+/* Header */
+#cv-header {
+  text-align: center;
 }
-/* json preview*/
-#json-preview {
-    background-color: #2d2d2d; /* Dark background */
-    color: #f8f8f2; /* Light text */
-    border-left: 1px solid #444;
-    overflow: auto;
+
+#cv-photo {
+  width: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+#cv-name {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#cv-title {
+  font-size: 1.5em;
+  color: #666;
+}
+
+#cv-contact {
+  margin-top: 10px;
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Sezioni */
+section {
+  margin-top: 20px;
+}
+
+h3 {
+  background: linear-gradient(to right, #4caf50, #008CBA);
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skill {
+  background: #e0f7fa;
+  padding: 10px;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+}
+
+.skill-bar {
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+#courses-list, #experiences-list {
+  padding-left: 20px;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
 }
