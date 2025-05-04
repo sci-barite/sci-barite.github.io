@@ -11,6 +11,7 @@ body {
 #cv-container {
     display: flex;
     width: 21cm;
+    min-height: 29.7cm; /* A4 height */
     background-color: white;
     padding: 20px;
     gap: 10px;
@@ -103,8 +104,11 @@ header {
     overflow: visible;
 }
 /* JSON Preview */
-#json-preview {
-    display: none; /* Hidden by default */
+#json-preview { 
+    background-color: #2d2d2d; /* Dark background */
+    color: #f8f8f2; /* Light text */
+    border-left: 1px solid #444;
+    overflow: auto;
 }
 
 @media print and (orientation: portrait) {
@@ -112,6 +116,13 @@ header {
         flex-direction: row;
     }
     #json-preview {
+        display: flex;
+        flex: 0 0 40%; /* Width of 40% */
+        margin: 10px;
+    }
+}
+@media print{
+     #json-preview {
         display: flex; /* Visible in portrait mode */
         flex: 0 0 40%; /* Width of 40% */
         margin: 10px;

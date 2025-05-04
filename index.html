@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"  crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Prism CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-dark.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="bg-gray-100 flex flex-col items-center">
+    <!-- Top Bar with Buttons -->
+    <div id="top-bar" class="flex justify-center space-x-4 p-4 bg-gray-200 w-full">
+        <button id="landscape-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Landscape Mode</button>
+        <button id="page-mode-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Multi-Page</button>
+        <button id="json-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Toggle JSON</button>
+    </div>
 
-    <div id="top-bar">
-        <button id="landscape-button">Landscape Mode</button>
-        <button id="page-mode-button">Multi-Page</button>
+
+    <!-- Main CV Container -->
+    <div id="cv-container" class="flex flex-row bg-white shadow-lg rounded-lg overflow-hidden w-[21cm]">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-1/4 p-4 bg-blue-200 flex flex-col">
+            <div id="profile-container" class="mb-4"></div>
+            <div id="skills-container" class="flex flex-col"></div>
+            <div id="courses-container" class="flex flex-col"></div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-content" class="w-2/4 p-4 flex flex-col">
+            <header class="flex flex-col items-center justify-center mb-4"> <img src="pfp.jpeg" id="profile-picture" class="w-32 h-32 rounded-full mb-4"> </header>
+            <div id="experiences-container" class="flex flex-col"></div>
+            <div id="interests-container" class="flex flex-col"></div>
+        </main>
+        <div id="json-preview" class="w-1/4 p-4 bg-gray-800 text-white"></div>
+    </div>
+    <!-- Prism Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js" defer></script>
-    </div>
-    <div id="cv-container" >
-        <header>
-            <img src="pfp.jpeg" id="profile-picture">
-        </header>
-        <aside id="sidebar">
-            <div id="profile-container"></div>
-            <div id="skills-container"></div>
-            <div id="courses-container"></div>
-        </aside>
-        <main id="main-content">
-            <div id="experiences-container"></div>
-            <div id="interests-container"></div>
-        </main>
-        <div id="json-preview"></div>
-
-    </div>
 </body>
 </html>
