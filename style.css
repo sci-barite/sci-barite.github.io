@@ -1,47 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* style.css */
 
-/* A4 Container */
-#cv-container {
-    @apply w-[21cm] h-[29.7cm]
-}
-
-/* Header */
-#header {
-    @apply mb-8 flex items-center;
-}
-
-/* Main Area (Sidebar + Main Content) */
-#main-area {
-    @apply flex w-full;
-}
-
-/* Sidebar */
-#sidebar {
-    @apply w-1/4 mr-4;
-}
-/* Profile image*/
-#header img{
-    @apply mr-4
-}
-
-/* Main Content */
-#main-content {
-    @apply w-3/4;
-}
-
-/* Buttons */
-#top-bar button {
-    @apply px-4 py-2 bg-blue-500 text-white rounded;
-}
 /* Hide the json-preview when printing */
 @media print{
     #json-preview{
         display: none;
     }
+}
+/* json preview*/
+#json-preview {
+    background-color: #2d2d2d; /* Dark background */
+    color: #f8f8f2; /* Light text */
+    border-left: 1px solid #444;
+    overflow: auto;
 }
 /* json preview*/
 #json-preview {
