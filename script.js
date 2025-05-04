@@ -1,71 +1,92 @@
-window.addEventListener("load", function () {
-    // Carica i dati JSON dal file locale o remoto
-    fetch("https://cdn.jsdelivr.net/gh/sci-barite/sci-barite.github.io@main/data/CV.json")
-      .then(response => response.json())
-      .then(data => {
-        renderCV(data);
-      })
-      .catch(err => console.error('Errore nel caricamento del JSON:', err));
+window.addEventListener("load", () => {
+    const cvContainer = document.getElementById("cv-container");
+    const printBtn    = document.getElementById("print-btn");
   
-    // Funzione per stampare il CV
-    document.getElementById('print-btn').addEventListener('click', function() {
-      window.print();
+    fetch("cv.json")
+      .then(r => r.json())
+      .then(data => renderCV(data))
+      .catch(e => console.error(e));
+  
+    printBtn.addEventListener("click", () => window.print());
+  });
+  
+  function renderCV(d) {
+    // HEADER: foto, nome, titolo, età, istruzione e lingue
+    const headerEl = document.getElementById("cv-header");
+    headerEl.innerHTML = `
+      ${d.profile.photo ? `<img id="cv-photo" src="pfp.jpeg" alt="Foto" />` : ""}
+      <div>
+        <h1 id="cv-name">${d.name || "Rafael Romo Mulas"}</h1>
+        ${d.profile.age ? `<p>Età: ${d.profile.age}</p>` : ""}
+        <h2 id="cv-title">${d.title || ""}</h2>
+        <div id="cv-contact">${d.contact ? `${d.contact.email} ‑ ${d.contact.phone}` : ""}</div>
+      </div>
+    `;
+  
+    // Istruzione
+    const eduList = d.profile.education.map(ed => `
+      <li>
+        <strong>${ed.degree}</strong>, ${ed.institution} (${ed.year})<br>
+        <em>${ed.details}</em>
+      </li>
+    `).join("");
+    document.querySelector("#cv-languages + ul").insertAdjacentHTML("beforebegin",
+      `<h3>Istruzione</h3><ul>${eduList}</ul>`
+    );
+  
+    // Lingue
+    const langUl = document.querySelector("#cv-languages ul");
+    langUl.innerHTML = d.profile.languages.map(l => `
+      <li><strong>${l.name}</strong> – ${l.level}${l.details ? ` (${l.details})` : ""}</li>
+    `).join("");
+  
+    // SKILLS & COURSES in sidebar
+    const skillsList   = document.getElementById("skills-list");
+    const coursesList  = document.getElementById("courses-list");
+    const pagesMode    = document.getElementById("pages").value;
+    const sortedSkills = d.skills.sort((a,b)=>b.level - a.level);
+  
+    if (pagesMode === "2") {
+      // dettagliati
+      skillsList.innerHTML = sortedSkills.map(s => `
+        <div class="skill">
+          <strong>${s.name}</strong><br>
+          <div class="skill-bar" style="--pct:${s.level}%"></div>
+          <small>${s.functionalCategory}</small>
+        </div>
+      `).join("");
+      coursesList.innerHTML = d.courses.map(c => `
+        <li class="course">
+          <strong>${c.title}</strong> – ${c.provider} (${c.year})
+        </li>
+      `).join("");
+    } else {
+      // compatto
+      skillsList.innerHTML = `<p>${d.skills.map(s=>s.name).join(", ")}</p>`;
+      coursesList.innerHTML = `<p>${d.courses.length} corsi totali</p>`;
+    }
+  
+    // EXPERIENCE + progetti
+    const expList = document.getElementById("experiences-list");
+    expList.innerHTML = "";
+    d.experiences.forEach((exp, i) => {
+      const projToShow = pagesMode==="2" ? exp.projects : exp.projects.slice(0,3);
+      expList.insertAdjacentHTML("beforeend", `
+        <div class="experience ${projToShow.length < exp.projects.length ? 'collapsed' : ''}">
+          <h4>${exp.role} @ ${exp.company} <span class="period">(${exp.duration})</span></h4>
+          <ul class="project-list">
+            ${projToShow.map(p=>`<li class="project">
+              <strong>${p.title}</strong>: ${p.description}
+            </li>`).join("")}
+          </ul>
+        </div>
+      `);
     });
   
-    // Funzione per popolare il CV con i dati
-    function renderCV(data) {
-      // Header
-      document.getElementById('cv-photo').src = data.photo || "pfp.jpeg";
-      document.getElementById('cv-name').innerText = data.name;
-      document.getElementById('cv-title').innerText = data.title;
-      document.getElementById('cv-contact').innerHTML = `<strong>Email:</strong> ${data.contact.email} <br><strong>Phone:</strong> ${data.contact.phone}`;
-  
-      // Lingue
-      const languagesList = document.getElementById('cv-languages').querySelector('ul');
-      data.languages.forEach(language => {
-        let li = document.createElement('li');
-        li.innerHTML = `<strong>${language.name}:</strong> ${language.level} - ${language.details}`;
-        languagesList.appendChild(li);
-      });
-  
-      // Skill
-      const skillsList = document.getElementById('skills-list');
-      data.skills.forEach(skill => {
-        let skillDiv = document.createElement('div');
-        skillDiv.classList.add('skill');
-        skillDiv.innerHTML = `
-          <strong>${skill.name}</strong>
-          <div class="skill-bar" style="width: ${skill.level * 10}%"></div>
-        `;
-        skillsList.appendChild(skillDiv);
-      });
-  
-      // Corsi
-      const coursesList = document.getElementById('courses-list');
-      data.courses.forEach(course => {
-        let li = document.createElement('li');
-        li.innerHTML = `<strong>${course.name}</strong> (${course.date}) - ${course.source}`;
-        coursesList.appendChild(li);
-      });
-  
-      // Esperienze Lavorative
-      const experiencesList = document.getElementById('experiences-list');
-      data.experiences.forEach(experience => {
-        let expDiv = document.createElement('div');
-        expDiv.classList.add('experience');
-        expDiv.innerHTML = `
-          <h4>${experience.role} - ${experience.company} (${experience.period})</h4>
-          <div class="projects">
-            ${experience.projects.map(project => `
-              <div class="project">
-                <strong>${project.name}</strong>
-                <p>${project.description}</p>
-              </div>
-            `).join('')}
-          </div>
-        `;
-        experiencesList.appendChild(expDiv);
-      });
+    // INTERESTS
+    const intSec = document.getElementById("interests-list");
+    if(intSec){
+      intSec.innerHTML = d.interests.map(i=>`<li>${i}</li>`).join("");
     }
-  });
+  }
   

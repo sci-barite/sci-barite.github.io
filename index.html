@@ -1,45 +1,63 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marco Rossi - CV</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV – Marco Rossi</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div id="cv-container">
-    <!-- Contenitore principale del CV -->
+  <div id="cv-container" class="page">
+
+    <!-- HEADER -->
     <header id="cv-header">
-      <img id="cv-photo" src="pfp.jpeg" alt="Foto" />
-      <h1 id="cv-name"></h1>
-      <h2 id="cv-title"></h2>
-      <div id="cv-contact"></div>
+      <img id="cv-photo" src="" alt="Foto Profilo" />
+      <div>
+        <h1 id="cv-name">Marco Rossi</h1>
+        <h2 id="cv-title">Esperto in Tecnologie Geo-Spaziali</h2>
+        <p id="cv-age">Età: 38</p>
+        <p id="cv-contact">email@example.com – +39 000 000 0000</p>
+      </div>
     </header>
 
-    <section id="cv-languages">
-      <h3>Lingue</h3>
-      <ul></ul>
+    <!-- LINGUE E ISTRUZIONE -->
+    <section id="cv-info">
+      <div id="cv-education">
+        <h3>Istruzione</h3>
+        <ul></ul>
+      </div>
+      <div id="cv-languages">
+        <h3>Lingue</h3>
+        <ul></ul>
+      </div>
     </section>
 
-    <section id="cv-skills">
-      <h3>Competenze</h3>
-      <div id="skills-list"></div>
-    </section>
+    <!-- LAYOUT A COLONNE -->
+    <div class="cv-body">
+      <aside class="cv-sidebar">
+        <section id="skills">
+          <h3>Competenze</h3>
+          <div id="skills-list"></div>
+        </section>
+        <section id="courses">
+          <h3>Corsi</h3>
+          <div id="courses-list"></div>
+        </section>
+      </aside>
 
-    <section id="cv-courses">
-      <h3>Corsi</h3>
-      <ul id="courses-list"></ul>
-    </section>
-
-    <section id="cv-experiences">
-      <h3>Esperienze Lavorative</h3>
-      <div id="experiences-list"></div>
-    </section>
-
-    <button id="print-btn">Stampa CV</button>
+      <main class="cv-main">
+        <section id="experiences">
+          <h3>Esperienze Professionali</h3>
+          <div id="experiences-list"></div>
+        </section>
+        <section id="interests">
+          <h3>Interessi</h3>
+          <ul id="interests-list"></ul>
+        </section>
+      </main>
+    </div>
   </div>
 
-  <script src="js/main.js"></script>
-</body>
-</html>
+  <!-- CONTROLLI -->
+  <div id="cv-controls">
