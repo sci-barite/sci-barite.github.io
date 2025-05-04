@@ -1,4 +1,4 @@
-fetch('CV.json')
+fetch('https://cdn.jsdelivr.net/gh/sci-barite/sci-barite.github.io@main/data/CV.json')
   .then(response => response.json())
   .then(data => {
     console.log(data); // Log the entire data object
@@ -93,11 +93,15 @@ fetch('CV.json')
               courseDiv.appendChild(relatedSkillDiv);
           });
       }
-
         coursesContainer.appendChild(courseDiv);
-    }
-    const landscapeButton = document.getElementById('landscape-button');
-  }
+      });
+    } // end of courses
+        const landscapeButton = document.getElementById('landscape-button');
+        if(landscapeButton && cvContainer){
+            landscapeButton.addEventListener('click', () => {
+              cvContainer.classList.toggle('landscape');
+            });
+        }
         const interestsContainer = document.getElementById('interests-container');
         if(data.interests && interestsContainer){
           data.interests.forEach(interest=>{
@@ -105,13 +109,7 @@ fetch('CV.json')
             interestDiv.textContent = interest;
             interestsContainer.appendChild(interestDiv)
           })
-        }
-
-        if(landscapeButton && cvContainer){
-            landscapeButton.addEventListener('click', () => {
-              cvContainer.classList.toggle('landscape');
-            });
-        }
-
+        }//end of interests
+        
     })
   .catch(error => console.error('Error:', error));
