@@ -7,14 +7,21 @@ fetch('https://cdn.jsdelivr.net/gh/sci-barite/sci-barite.github.io@main/data/CV.
         if (data.profile && header) {
             const profileTitle = document.createElement('h2');
             profileTitle.textContent = 'Profile';
-            header.appendChild(profileTitle);
+            header.insertBefore(profileTitle, header.firstChild)
 
             const ageDiv = document.createElement('div');
             ageDiv.textContent = `Age: ${data.profile.age}`;
             header.appendChild(ageDiv);
+            
+            const languagesTitle = document.createElement('h3');
+            languagesTitle.textContent = "Languages";
+            header.appendChild(languagesTitle);
 
             const educationList = document.createElement('ul');
+            educationList.id="education-list"
+            
             data.profile.education.forEach(education => {
+                
                 const educationItem = document.createElement('li');
                 educationItem.textContent = `Degree: ${education.degree}, Institution: ${education.institution}, Year: ${education.year}, Details: ${education.details}`;
                 educationList.appendChild(educationItem);
@@ -35,55 +42,81 @@ fetch('https://cdn.jsdelivr.net/gh/sci-barite/sci-barite.github.io@main/data/CV.
         if (data.skills && sidebar) {
             const skillsTitle = document.createElement('h3');
             skillsTitle.textContent = 'Skills';
-            sidebar.appendChild(skillsTitle);
-            const skillsList = document.createElement('ul');
+            sidebar.insertBefore(skillsTitle, sidebar.firstChild);
+            const skillsContainer = document.createElement('div');
+            skillsContainer.id = 'skills-container';
+            
             data.skills.forEach(skill => {
-                const skillItem = document.createElement('li');
-                skillItem.textContent = skill.name;
-                const skillLevel = document.createElement('div');
-                skillLevel.textContent = `Level: ${skill.level}`;
-                skillItem.appendChild(skillLevel);
-
-                if (skill.experiences && skill.experiences.length > 0) {
-                    skill.experiences.forEach(experience => {
-                        const skillExperienceDiv = document.createElement('div');
-                        skillExperienceDiv.textContent = experience;
-                        skillItem.appendChild(skillExperienceDiv);
-                    });
+                const skillItem = document.createElement('div');
+                skillItem.classList.add('skill');
+                skillItem.textContent = skill.name;//only name
+                 const skillLevel = document.createElement('div');
+                 skillLevel.textContent = `Level: ${skill.level}`;
+                 skillLevel.style.display = 'none';
+                 skillItem.appendChild(skillLevel);
+                 const skillExperiencesContainer = document.createElement('ul');
+                    skillExperiencesContainer.style.display = 'none';
+                    if (skill.experiences && skill.experiences.length > 0) {
+                        skill.experiences.forEach(experience => {
+                            const skillExperienceDiv = document.createElement('li');
+                            skillExperienceDiv.textContent = experience;
+                            skillExperiencesContainer.appendChild(skillExperienceDiv);
+                        });
+                    }
+                    skillItem.appendChild(skillExperiencesContainer);//add the list to the item
+                const cvContainer = document.getElementById('cv-container');//get the container
+                if(cvContainer.classList.contains('multi-page')){
+                     skillLevel.style.display = 'block';
+                     skillExperiencesContainer.style.display = 'block';
                 }
-                skillsList.appendChild(skillItem);
-            });
+                
+
+                
+                 
+                skillsContainer.appendChild(skillItem);
+            });//end of skills loop
             sidebar.appendChild(skillsList);
         }
         //Sidebar: Courses
         if (data.courses && sidebar) {
             const coursesTitle = document.createElement('h3');
+            
             coursesTitle.textContent = 'Courses';
-            sidebar.appendChild(coursesTitle);
-            const coursesList = document.createElement('ul');
+            sidebar.appendChild(coursesTitle)
+
+            const coursesContainer = document.createElement('div');
+            coursesContainer.id = 'courses-container';
             data.courses.forEach(course => {
-                const courseItem = document.createElement('li');
+                const courseItem = document.createElement('div');
                 courseItem.classList.add('course');
-                const courseTitle = document.createElement('h4');
-                courseTitle.textContent = course.title;
                 const provider = document.createElement('p');
-                provider.textContent = `Provider: ${course.provider}`;
-                const year = document.createElement('p');
-                year.textContent = `Year: ${course.year}`;
-                courseItem.appendChild(courseTitle);
+                provider.textContent = course.provider;
                 courseItem.appendChild(provider);
+                const courseTitle = document.createElement('p');
+                courseTitle.textContent = course.title;
+                courseTitle.style.display = 'none';//hidden by default
+                const year = document.createElement('div');
+                year.textContent = `Year: ${course.year}`;
+                year.style.display = 'none';//hidden by default
+                courseItem.appendChild(courseTitle);
                 courseItem.appendChild(year);
 
+                const relatedSkillsContainer = document.createElement('ul');
                 if (course.relatedSkills && course.relatedSkills.length > 0) {
                     course.relatedSkills.forEach(relatedSkill => {
-                        const relatedSkillDiv = document.createElement('div');
+                        const relatedSkillDiv = document.createElement('li');
                         relatedSkillDiv.textContent = relatedSkill;
-                        courseItem.appendChild(relatedSkillDiv);
+                        relatedSkillsContainer.appendChild(relatedSkillDiv);
                     });
                 }
-                coursesList.appendChild(courseItem);
-            });
-            sidebar.appendChild(coursesList);
+                courseItem.appendChild(relatedSkillsContainer);
+                coursesContainer.appendChild(courseItem);
+                });
+                
+               
+
+
+            sidebar.appendChild(coursesContainer);
         }
         // Main: Experiences
         const mainContent = document.getElementById('main-content');
@@ -131,7 +164,7 @@ fetch('https://cdn.jsdelivr.net/gh/sci-barite/sci-barite.github.io@main/data/CV.
                 }
                 experiencesContainer.appendChild(experienceDiv)
             });
-            mainContent.appendChild(experiencesContainer);
+            mainContent.insertBefore(experiencesContainer,mainContent.firstChild);
         }
          // Main: Interests
          if (data.interests && mainContent) {
@@ -145,7 +178,9 @@ fetch('https://cdn.jsdelivr.net/gh/sci-barite/sci-barite.github.io@main/data/CV.
                 interestDiv.textContent = interest;
                 interestsContainer.appendChild(interestDiv)
             });
-            mainContent.appendChild(interestsContainer);
+            mainContent.appendChild(interestsContainer)
+
+           
         }
         const cvContainer = document.getElementById('cv-container');
         const landscapeButton = document.getElementById('landscape-button');
@@ -166,10 +201,30 @@ fetch('https://cdn.jsdelivr.net/gh/sci-barite/sci-barite.github.io@main/data/CV.
                     }
                 });
                 
+            const skillsContainer = document.getElementById('skills-container');
+            const coursesContainer = document.getElementById('courses-container');
+            const allSkills = skillsContainer.querySelectorAll(".skill");
+                allSkills.forEach(skill=>{
+                const skillLevel = skill.querySelector("div");
+                const skillExperiences = skill.querySelector("ul");
+                    if(cvContainer.classList.contains('multi-page')){
+                         skillLevel.style.display = 'block';
+                         skillExperiences.style.display = 'block';
+                    }else{
+                        skillLevel.style.display = 'none';
+                        skillExperiences.style.display = 'none';
+                    }
+                });
+                const allCourses = coursesContainer.querySelectorAll(".course");
+                allCourses.forEach(course=>{
+                    const courseTitle = course.querySelector("p");
+                    const year = course.querySelector("div");
+                     courseTitle.style.display = cvContainer.classList.contains("multi-page") ? "block":"none";
+                     year.style.display = cvContainer.classList.contains("multi-page") ? "block":"none";
+                });
+                
             });
-        }
+        } 
     })
     .catch(error => console.error('Error:', error));
-
-
 

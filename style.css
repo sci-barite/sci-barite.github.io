@@ -9,11 +9,10 @@ body {
 }
 
 #cv-container {
+    display: flex;
     width: 21cm;
-    min-height: 29.7cm;
     background-color: white;
     padding: 20px;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
 }
@@ -43,13 +42,13 @@ header {
 
 /* Sidebar */
 #sidebar {
-    width: 25%;
+    width: 200px;
     padding: 10px;
     background-color: lightgrey;
     display: flex;
     flex-direction: column;
 }
-/* Main Content */
+/* Main Content*/
 #main-content {
     width: 75%;
     padding: 10px;
@@ -80,9 +79,22 @@ header {
     max-height: 30px;
 }
 
+/*expanded skill*/
+.skill.expanded > div{
+    display:block;
+}
+
+/*expanded course*/
+.course.expanded > div{
+    display:block;
+}
+
 /* Multi-page */
 #cv-container.multi-page .experience {
     page-break-after: always;
+}
+#cv-container.multi-page #sidebar{
+    page-break-before: always;
 }
 
 #cv-container.multi-page .project, #cv-container.multi-page .interest {
@@ -94,5 +106,7 @@ header {
     #cv-container {
         width: 29.7cm;
         min-height: 21cm;
+        flex-direction: row;
     }
+
 }
